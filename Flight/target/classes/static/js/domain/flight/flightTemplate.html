@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Flight reservation</title>
+</head>
+<body>
+<div class="jumbotron text-center" id="home">
+<h1>CookSystem Airlines</h1>
+</div>
+
+
+<div class="container">
+<button class="btn btn-info" ng-click=flightsController.flight()>List of available flights</h2></button>
+<button type="button" class="btn btn-success pull-center" ng-button="loginController.login()"><a href="#login">LogIn</a></button> 
+
+<!-- Gets the list of available flights -->
+
+    <div ng-repeat="det in flightsController.detail" id="booked">
+            <span class="glyphicon glyphicons-mixed-buildings text-justify" aria-hidden="true"></span>
+				<p> <div class="col-sm-2">Source: {{det.origin}}</div>
+				 <div class="col-sm-4"ng-model="flightsController.destination">Destination: {{det.destination}}</div>
+				 <div class="col-sm-6">Flight Time :{{det.flightTime}}</div>
+				 <div class="col-sm-6">Waitig hours : {{det.offset}}</div></p>
+          </div>
+</div>
+
+</body>
+</html>

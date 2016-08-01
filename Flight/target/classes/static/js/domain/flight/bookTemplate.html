@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body><div class="jumbotron text-center" id="home">
+<h1>Booked flights </h1>
+</div>
+<div class="container"><a href=#searchFlights>Back to search page</a> </div>
+<div class="container"><a href=#map>Map</a></div>
+<div ng-repeat="det in bookedFlightsController.allBook" id="booked">
+            <span class="glyphicon glyphicons-mixed-buildings text-justify" aria-hidden="true"></span>
+				<p> <div class="col-sm-2">Source: {{det.source}}</div>
+				 <div class="col-sm-4"ng-model="flightsController.destination">Destination: {{det.destination}}</div>
+				 <div class="col-sm-6">Flight Time :{{det.flightTime}}</div>
+				 <div class="col-sm-6">Waitig hours : {{det.offset}}</div></p>
+          </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="jumbotron text-center" id="home">
+<h1>Flight Reservation </h1>
+</div>
+
+<!-- Dropdown for Selecting Source -->
+<h1>Search for flights</h1>
+<button class="btn btn-info"><a href=#bookedFlights>Booked Flights</a></h2></button> 
+<div class=" container col-sm-4"><label for="dropdown"><h3>Source</h3></label>
+<select name="dropdown" ng-model="selectedSource" id="dropdown">
+    <option value="Jacksonville">Jacksonville</option>
+    <option value="Miami">Miami</option>
+    <option value="Orlando">Orlando</option>
+    <option value="Tallahasse">Tallahasse</option>
+</select>
+
+<!-- Dropdown for Selecting Destination -->
+
+<div><label for="dropdown2"><h3>Destination</h3></label>
+<select name="dropdown2" ng-model="selectedDestination"id="dropdown"> 
+    <option value="Jacksonville">Jacksonville</option>
+    <option value="Miami">Miami</option>
+    <option value="Orlando">Orlando</option>
+    <option value="Tallahasse">Tallahasse</option>
+</select>
+</div>
+
+<button class="btn btn-info" ng-click=searchFlightController.flight()>Search Flights</h2></button> 
+
+<div ng-repeat="det in searchFlightController.detail">
+
+            <span class="glyphicon glyphicons-mixed-buildings text-justify" aria-hidden="true"></span>
+               <ul>
+             <!--   <li><div ng-switch-when="true">No direct flights available</div></li> -->
+				<li><div >Source: {{selectedSource}}</div></li>
+				<li> <div>Destination: {{selectedDestination}}</div></li>
+				<li> <div >Flight Time :{{det.flightTime}}</div></li>
+				 <li><div>Waiting hours : {{det.offset}}</div></li></ul>
+				 <button ng-click="searchFlightController.book(det.flightTime,det.offset)" a href=#bookFlights>Book flights</a></button>
+				 </div>
+<div ng-switch="selectedSource=='Tallahasse'&& selectedDestination=='Miami'">
+<div ng-switch-when="true">No direct flights available</div></div> 
+
+</body>
+</html>
